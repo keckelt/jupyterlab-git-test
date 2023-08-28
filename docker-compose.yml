@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  jupytergit:
+    image: jupyter/scipy-notebook:lab-3.6.3
+    command:
+      [
+        'jupyter',
+        'lab',
+        '--port=11777',
+        '--no-browser',
+        "--ServerApp.token=''",
+        "--ServerApp.password=''"
+      ]
+    ports:
+      - 11777:11777
+    volumes:
+      - .:/home/jovyan
